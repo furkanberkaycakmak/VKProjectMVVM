@@ -8,6 +8,7 @@
 import Foundation
 
 
+
 struct Product: Codable {
     var id: String?
     var name: String?
