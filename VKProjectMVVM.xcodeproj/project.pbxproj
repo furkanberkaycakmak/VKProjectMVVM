@@ -9,23 +9,53 @@
 /* Begin PBXBuildFile section */
 		630CF257280324EB00D52738 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630CF256280324EB00D52738 /* AppDelegate.swift */; };
 		630CF259280324EB00D52738 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630CF258280324EB00D52738 /* SceneDelegate.swift */; };
-		630CF25B280324EB00D52738 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630CF25A280324EB00D52738 /* ViewController.swift */; };
+		630CF25B280324EB00D52738 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630CF25A280324EB00D52738 /* BaseViewController.swift */; };
 		630CF25E280324EB00D52738 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 630CF25C280324EB00D52738 /* Main.storyboard */; };
 		630CF261280324EB00D52738 /* VKProjectMVVM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 630CF25F280324EB00D52738 /* VKProjectMVVM.xcdatamodeld */; };
 		630CF263280324ED00D52738 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 630CF262280324ED00D52738 /* Assets.xcassets */; };
 		630CF266280324ED00D52738 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 630CF264280324ED00D52738 /* LaunchScreen.storyboard */; };
+		630CF2712803286B00D52738 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630CF2702803286B00D52738 /* ProductsViewController.swift */; };
+		630CF274280328C800D52738 /* ProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630CF272280328C800D52738 /* ProductDetailViewController.swift */; };
+		630CF2782803291900D52738 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630CF2762803291900D52738 /* ReviewViewController.swift */; };
+		630CF27C280329D500D52738 /* ProductsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630CF27B280329D500D52738 /* ProductsTableViewCell.swift */; };
+		630CF27E28032A0D00D52738 /* ProductDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630CF27D28032A0D00D52738 /* ProductDetailTableViewCell.swift */; };
+		630CF28028032A2300D52738 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630CF27F28032A2300D52738 /* ReviewTableViewCell.swift */; };
+		630CF28328032A8700D52738 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630CF28228032A8700D52738 /* ProductViewModel.swift */; };
+		630CF28528032A9A00D52738 /* ReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630CF28428032A9A00D52738 /* ReviewViewModel.swift */; };
+		630CF28928032AE800D52738 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630CF28828032AE800D52738 /* Product.swift */; };
+		630CF28B28032AFD00D52738 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630CF28A28032AFD00D52738 /* Review.swift */; };
+		630CF28D28032B2A00D52738 /* ReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630CF28C28032B2A00D52738 /* ReviewService.swift */; };
+		630CF28F28032B4E00D52738 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630CF28E28032B4E00D52738 /* ProductService.swift */; };
+		6366AAB82808ADBB008E3728 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6366AAB72808ADBB008E3728 /* Extensions.swift */; };
+		6DDEA06B4D322898C0B6620D /* Pods_VKProjectMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5635413770328FC2606930 /* Pods_VKProjectMVVM.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1480C78B3BE685A41B6E2E9C /* Pods-VKProjectMVVM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKProjectMVVM.release.xcconfig"; path = "Target Support Files/Pods-VKProjectMVVM/Pods-VKProjectMVVM.release.xcconfig"; sourceTree = "<group>"; };
 		630CF253280324EB00D52738 /* VKProjectMVVM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VKProjectMVVM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		630CF256280324EB00D52738 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		630CF258280324EB00D52738 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		630CF25A280324EB00D52738 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		630CF25A280324EB00D52738 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		630CF25D280324EB00D52738 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		630CF260280324EB00D52738 /* VKProjectMVVM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VKProjectMVVM.xcdatamodel; sourceTree = "<group>"; };
 		630CF262280324ED00D52738 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		630CF265280324ED00D52738 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		630CF267280324ED00D52738 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		630CF2702803286B00D52738 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		630CF272280328C800D52738 /* ProductDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailViewController.swift; sourceTree = "<group>"; };
+		630CF2762803291900D52738 /* ReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
+		630CF27B280329D500D52738 /* ProductsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsTableViewCell.swift; sourceTree = "<group>"; };
+		630CF27D28032A0D00D52738 /* ProductDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailTableViewCell.swift; sourceTree = "<group>"; };
+		630CF27F28032A2300D52738 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
+		630CF28228032A8700D52738 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
+		630CF28428032A9A00D52738 /* ReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewViewModel.swift; sourceTree = "<group>"; };
+		630CF28828032AE800D52738 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		630CF28A28032AFD00D52738 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		630CF28C28032B2A00D52738 /* ReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewService.swift; sourceTree = "<group>"; };
+		630CF28E28032B4E00D52738 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
+		6366AAB72808ADBB008E3728 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		9C5635413770328FC2606930 /* Pods_VKProjectMVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKProjectMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E35D29B17393670B9B54FA24 /* Pods-VKProjectMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKProjectMVVM.debug.xcconfig"; path = "Target Support Files/Pods-VKProjectMVVM/Pods-VKProjectMVVM.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +63,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DDEA06B4D322898C0B6620D /* Pods_VKProjectMVVM.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		121289B77DAD9A837C334034 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9C5635413770328FC2606930 /* Pods_VKProjectMVVM.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		26D7727CB215082F90A0AA76 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E35D29B17393670B9B54FA24 /* Pods-VKProjectMVVM.debug.xcconfig */,
+				1480C78B3BE685A41B6E2E9C /* Pods-VKProjectMVVM.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		630CF24A280324EB00D52738 = {
 			isa = PBXGroup;
 			children = (
 				630CF255280324EB00D52738 /* VKProjectMVVM */,
 				630CF254280324EB00D52738 /* Products */,
+				26D7727CB215082F90A0AA76 /* Pods */,
+				121289B77DAD9A837C334034 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,16 +108,69 @@
 		630CF255280324EB00D52738 /* VKProjectMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				630CF28728032AD500D52738 /* Models */,
+				630CF28628032AC700D52738 /* Service */,
+				630CF28128032A6D00D52738 /* ViewModels */,
+				630CF27A280329C500D52738 /* Views */,
+				630CF26D280327C800D52738 /* ViewControllers */,
 				630CF256280324EB00D52738 /* AppDelegate.swift */,
 				630CF258280324EB00D52738 /* SceneDelegate.swift */,
-				630CF25A280324EB00D52738 /* ViewController.swift */,
+				630CF25A280324EB00D52738 /* BaseViewController.swift */,
 				630CF25C280324EB00D52738 /* Main.storyboard */,
 				630CF262280324ED00D52738 /* Assets.xcassets */,
 				630CF264280324ED00D52738 /* LaunchScreen.storyboard */,
 				630CF267280324ED00D52738 /* Info.plist */,
 				630CF25F280324EB00D52738 /* VKProjectMVVM.xcdatamodeld */,
+				6366AAB72808ADBB008E3728 /* Extensions.swift */,
 			);
 			path = VKProjectMVVM;
+			sourceTree = "<group>";
+		};
+		630CF26D280327C800D52738 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				630CF2702803286B00D52738 /* ProductsViewController.swift */,
+				630CF272280328C800D52738 /* ProductDetailViewController.swift */,
+				630CF2762803291900D52738 /* ReviewViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		630CF27A280329C500D52738 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				630CF27B280329D500D52738 /* ProductsTableViewCell.swift */,
+				630CF27D28032A0D00D52738 /* ProductDetailTableViewCell.swift */,
+				630CF27F28032A2300D52738 /* ReviewTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		630CF28128032A6D00D52738 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				630CF28228032A8700D52738 /* ProductViewModel.swift */,
+				630CF28428032A9A00D52738 /* ReviewViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		630CF28628032AC700D52738 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				630CF28C28032B2A00D52738 /* ReviewService.swift */,
+				630CF28E28032B4E00D52738 /* ProductService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		630CF28728032AD500D52738 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				630CF28828032AE800D52738 /* Product.swift */,
+				630CF28A28032AFD00D52738 /* Review.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,9 +180,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 630CF26A280324ED00D52738 /* Build configuration list for PBXNativeTarget "VKProjectMVVM" */;
 			buildPhases = (
+				D5FD3270D023C323D466BCA1 /* [CP] Check Pods Manifest.lock */,
 				630CF24F280324EB00D52738 /* Sources */,
 				630CF250280324EB00D52738 /* Frameworks */,
 				630CF251280324EB00D52738 /* Resources */,
+				AD49BB83A1A36531CA0CC10A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -136,15 +241,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		AD49BB83A1A36531CA0CC10A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VKProjectMVVM/Pods-VKProjectMVVM-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VKProjectMVVM/Pods-VKProjectMVVM-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VKProjectMVVM/Pods-VKProjectMVVM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5FD3270D023C323D466BCA1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VKProjectMVVM-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		630CF24F280324EB00D52738 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				630CF261280324EB00D52738 /* VKProjectMVVM.xcdatamodeld in Sources */,
-				630CF25B280324EB00D52738 /* ViewController.swift in Sources */,
+				630CF28F28032B4E00D52738 /* ProductService.swift in Sources */,
+				630CF25B280324EB00D52738 /* BaseViewController.swift in Sources */,
+				630CF2782803291900D52738 /* ReviewViewController.swift in Sources */,
 				630CF257280324EB00D52738 /* AppDelegate.swift in Sources */,
 				630CF259280324EB00D52738 /* SceneDelegate.swift in Sources */,
+				630CF27E28032A0D00D52738 /* ProductDetailTableViewCell.swift in Sources */,
+				630CF28328032A8700D52738 /* ProductViewModel.swift in Sources */,
+				630CF28D28032B2A00D52738 /* ReviewService.swift in Sources */,
+				630CF27C280329D500D52738 /* ProductsTableViewCell.swift in Sources */,
+				630CF28028032A2300D52738 /* ReviewTableViewCell.swift in Sources */,
+				630CF28B28032AFD00D52738 /* Review.swift in Sources */,
+				630CF2712803286B00D52738 /* ProductsViewController.swift in Sources */,
+				630CF28528032A9A00D52738 /* ReviewViewModel.swift in Sources */,
+				6366AAB82808ADBB008E3728 /* Extensions.swift in Sources */,
+				630CF274280328C800D52738 /* ProductDetailViewController.swift in Sources */,
+				630CF28928032AE800D52738 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +448,7 @@
 		};
 		630CF26B280324ED00D52738 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E35D29B17393670B9B54FA24 /* Pods-VKProjectMVVM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -316,6 +477,7 @@
 		};
 		630CF26C280324ED00D52738 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1480C78B3BE685A41B6E2E9C /* Pods-VKProjectMVVM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
