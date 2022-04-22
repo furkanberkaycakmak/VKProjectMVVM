@@ -29,7 +29,7 @@ class ProductDetailViewController: BaseViewController {
                     if res{
                         strongSelf.productDetailTable.reloadSections(IndexSet(integer: 1), with: .automatic)
                         if strongSelf.viewModel.reviews.isEmpty {
-                            strongSelf.productDetailTable.tableFooterView = strongSelf.createErrorView(msg: "No reviews have been listed yet.")
+                            strongSelf.productDetailTable.tableFooterView = strongSelf.createErrorView(msg: "Henüz hiç yorum yok")
                         }
                     }
                     else{
@@ -43,8 +43,6 @@ class ProductDetailViewController: BaseViewController {
         
     }
     
-    
-    
     @IBAction func addReviewTapped(_ sender: UIButton) {
         guard let sb = storyboard else {
             return
@@ -54,10 +52,8 @@ class ProductDetailViewController: BaseViewController {
         vc.productId = product.id
         vc.delegate = self
         present(vc, animated: true)
-        
     }
 }
-
 
 extension ProductDetailViewController: ReviewDelegate{
     func reviewSent(review: Review) {
@@ -72,7 +68,6 @@ extension ProductDetailViewController: ReviewDelegate{
         }
     }
 }
-
 
 extension ProductDetailViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -109,16 +104,4 @@ extension ProductDetailViewController: UITableViewDelegate, UITableViewDataSourc
         }
     }
     
-    
 }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */

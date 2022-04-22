@@ -8,7 +8,7 @@
 import Foundation
 
 class ProductViewModel {
-    var products: [Product] = []
+    var products : [Product] = []
     var service : ProductServiceProtocol
     
     init(service: ProductServiceProtocol) {
@@ -27,4 +27,19 @@ class ProductViewModel {
         })
     }
     
+  /*  func deleteProduct(completion: @escaping (Bool, String?) -> Void) {
+        service.deleteProduct(id: id) { (res) in
+            
+            switch res{
+            case .success(let products):
+                self.products = products
+                completion(true, nil)
+            case .failure(let error):
+                print(error)
+                completion(false, error.localizedDescription)
+            }
+
+            
+        }
+    } */
 }

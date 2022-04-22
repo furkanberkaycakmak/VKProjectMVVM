@@ -138,7 +138,7 @@
         <!--Product Detail View Controller-->
         <scene sceneID="mPV-2A-2kl">
             <objects>
-                <viewController storyboardIdentifier="ProductDetailViewController" id="9xi-ff-yPl" customClass="ProductDetailViewController" customModule="AdidasCodingChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProductDetailViewController" id="9xi-ff-yPl" customClass="ProductDetailViewController" customModule="VKProjectMVVM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4pC-ke-k1G">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,7 +155,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductDetailTableViewCell" rowHeight="339" id="AOd-0w-ght" customClass="ProductDetailTableViewCell" customModule="AdidasCodingChallenge" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ProductDetailTableViewCell" rowHeight="339" id="AOd-0w-ght" customClass="ProductDetailTableViewCell" customModule="VKProjectMVVM" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="49.5" width="414" height="339"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AOd-0w-ght" id="qzR-b8-8qp">
@@ -211,7 +211,7 @@
                                             <outlet property="productPrice" destination="M09-R6-VTv" id="h2C-og-MzA"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReviewTableViewCell" id="wwO-zK-6u3" customClass="ReviewTableViewCell" customModule="AdidasCodingChallenge" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReviewTableViewCell" id="wwO-zK-6u3" customClass="ReviewTableViewCell" customModule="VKProjectMVVM" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="388.5" width="414" height="52.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wwO-zK-6u3" id="IqQ-iN-mRE">
@@ -283,12 +283,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SOH-IO-NDg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="443" y="-74"/>
+            <point key="canvasLocation" x="-378" y="-739"/>
         </scene>
         <!--Review View Controller-->
         <scene sceneID="Drq-Qo-iSw">
             <objects>
-                <viewController storyboardIdentifier="ReviewViewController" id="ern-Tj-5aG" customClass="ReviewViewController" customModule="AdidasCodingChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ReviewViewController" id="ern-Tj-5aG" customClass="ReviewViewController" customModule="VKProjectMVVM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AGg-UN-TQD">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -394,7 +394,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lWU-aP-nx2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1286" y="-74"/>
+            <point key="canvasLocation" x="-1294" y="-739"/>
         </scene>
     </scenes>
     <designables>

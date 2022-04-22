@@ -17,6 +17,7 @@ struct Product: Codable {
     var price: Float?
     var reviews : [Review]?
     var currency: String?
+    var ok : String?
     
     
     func getOverallRating() -> String {

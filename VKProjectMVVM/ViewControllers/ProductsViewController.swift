@@ -5,6 +5,7 @@
 //  Created by Berkay ÇAKMAK on 10.04.2022.
 //
 import UIKit
+import Floaty
 
 class ProductsViewController: BaseViewController {
 
@@ -27,7 +28,7 @@ class ProductsViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Adidas Products"
+        title = "VK Products"
         service = ProductService()
         viewModel = ProductViewModel(service: service)
         
@@ -40,6 +41,17 @@ class ProductsViewController: BaseViewController {
         searchController.searchBar.placeholder = "Search Products"
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        
+        let floaty = Floaty()
+        floaty.buttonColor = UIColor.red
+        floaty.addItem("Add Product", icon: UIImage(named: "add"), handler: { item in
+            let alert = UIAlertController(title: "Add Product", message: "Service is preparing..", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Okey then", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            floaty.close()
+        })
+        
+        self.view.addSubview(floaty)
     }
     
     @objc func refresh(_ sender: AnyObject) {
@@ -55,7 +67,6 @@ class ProductsViewController: BaseViewController {
                 }
                 strongSelf.refreshControl.endRefreshing()
                 if done{
-                    
                     strongSelf.productsTableView.reloadData()
                     if strongSelf.viewModel.products.isEmpty {
                         strongSelf.productsTableView.tableFooterView = strongSelf.createErrorView(msg: "No Products have been listed yet.")
@@ -89,7 +100,6 @@ class ProductsViewController: BaseViewController {
         filteredProducts = viewModel.products.filter { (product: Product) -> Bool in
             return (product.name?.lowercased().contains(searchText.lowercased()) ?? false || product.description?.lowercased().contains(searchText.lowercased()) ?? false)
       }
-      
       productsTableView.reloadData()
     }
 
@@ -97,16 +107,12 @@ class ProductsViewController: BaseViewController {
 
 extension ProductsViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
-        
         let searchBar = searchController.searchBar
         if let text = searchBar.text {
             filterContentForSearchText(text)
         }
     }
 }
-
-
-
 extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering {
@@ -139,4 +145,40 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
 
        select(product: product)
     }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: ""){(contextualAction,view,bool) in
+            let product: Product
+            if self.isFiltering {
+                product = self.filteredProducts[indexPath.row]
+            } else {
+                product = self.viewModel.products[indexPath.row]
+            }
+            
+            let alert = UIAlertController(title: "Are you sure want to delete", message: "You cannot undo this action", preferredStyle: .alert)
+            
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel){ action in }
+            alert.addAction(cancelAction)
+            
+            let yesAction = UIAlertAction(title: "Yes", style: .destructive){ action in
+                print("deleted")
+                
+            }
+            alert.addAction(yesAction)
+            
+            self.present(alert, animated: true)
+        }
+        deleteAction.image = UIImage(named: "x.jpg")
+        deleteAction.backgroundColor = UIColor(named: "ButtonColor")
+        
+        return UISwipeActionsConfiguration(actions: [deleteAction])
+    }
+    
+    
+    
+    
 }
+
+
+
