@@ -10,11 +10,25 @@ import UIKit
 
 class BaseViewController: UIViewController {
 
+    override func viewWillAppear(_ animated: Bool) {
+
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+
+        
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+ 
+    }
+    
+
     
     func presentAlert(title: String, msg: String, handler: ((UIAlertAction) -> Void)?) {
         let alert = UIAlertController(title: title, message: msg, preferredStyle: .alert)

@@ -6,6 +6,7 @@
 //
 import UIKit
 import Floaty
+import Synth
 
 class ProductsViewController: BaseViewController {
 
@@ -43,7 +44,10 @@ class ProductsViewController: BaseViewController {
         definesPresentationContext = true
         
         let floaty = Floaty()
-        floaty.buttonColor = UIColor.red
+        floaty.buttonColor = NeuUtils.baseColor
+        floaty.plusColor = UIColor.white
+        floaty.layer.cornerRadius = 25
+        floaty.applyNeuStyle()
         floaty.addItem("Add Product", icon: UIImage(named: "add"), handler: { item in
             let alert = UIAlertController(title: "Add Product", message: "Service is preparing..", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Okey then", style: .default, handler: nil))
@@ -85,6 +89,7 @@ class ProductsViewController: BaseViewController {
             }
         }
     }
+   
     func select(product: Product) {
         
         guard let sb = storyboard else {
@@ -162,7 +167,24 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
             alert.addAction(cancelAction)
             
             let yesAction = UIAlertAction(title: "Yes", style: .destructive){ action in
-                print("deleted")
+    /*            func deleteProduct(at row: Int) {
+
+
+                    let filteredProducts = self.filteredProducts[row]
+
+                    self.productService.deleteProduct(with: filteredProducts.id) { [weak self] result in
+                        switch result {
+                        case .success:
+                            self?.presentables.removeAll(where: {
+                                $0 == filteredPresentable
+                            })
+                            self?.onEvent?(.productDeleted(row: row))
+                            self?.state.switchToLoaded()
+                        case .failure(let error):
+                            self?.handleError(error)
+                        }
+                    }
+                } */
                 
             }
             alert.addAction(yesAction)

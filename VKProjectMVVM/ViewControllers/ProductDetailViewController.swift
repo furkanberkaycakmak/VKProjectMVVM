@@ -6,10 +6,16 @@
 //
 
 import UIKit
+import Synth
 
 class ProductDetailViewController: BaseViewController {
 
     @IBOutlet weak var productDetailTable: UITableView!
+    
+    @IBOutlet weak var addReview: UIButton!
+    
+    
+    
     var product = Product()
     var service : ReviewService!
     var viewModel : ReviewViewModel!
@@ -29,7 +35,7 @@ class ProductDetailViewController: BaseViewController {
                     if res{
                         strongSelf.productDetailTable.reloadSections(IndexSet(integer: 1), with: .automatic)
                         if strongSelf.viewModel.reviews.isEmpty {
-                            strongSelf.productDetailTable.tableFooterView = strongSelf.createErrorView(msg: "Henüz hiç yorum yok")
+                            strongSelf.productDetailTable.tableFooterView = strongSelf.createErrorView(msg: "No reviews listed yet")
                         }
                     }
                     else{

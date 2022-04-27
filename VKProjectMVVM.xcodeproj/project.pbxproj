@@ -26,7 +26,9 @@
 		630CF28B28032AFD00D52738 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630CF28A28032AFD00D52738 /* Review.swift */; };
 		630CF28D28032B2A00D52738 /* ReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630CF28C28032B2A00D52738 /* ReviewService.swift */; };
 		630CF28F28032B4E00D52738 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630CF28E28032B4E00D52738 /* ProductService.swift */; };
+		630EDD162818D47A0034AEEC /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EDD152818D47A0034AEEC /* GenericResponse.swift */; };
 		6366AAB82808ADBB008E3728 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6366AAB72808ADBB008E3728 /* Extensions.swift */; };
+		63CC2FDE281643200003975A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC2FDD281643200003975A /* LoginViewController.swift */; };
 		6DDEA06B4D322898C0B6620D /* Pods_VKProjectMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5635413770328FC2606930 /* Pods_VKProjectMVVM.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +55,9 @@
 		630CF28A28032AFD00D52738 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		630CF28C28032B2A00D52738 /* ReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewService.swift; sourceTree = "<group>"; };
 		630CF28E28032B4E00D52738 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
+		630EDD152818D47A0034AEEC /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
 		6366AAB72808ADBB008E3728 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		63CC2FDD281643200003975A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9C5635413770328FC2606930 /* Pods_VKProjectMVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKProjectMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35D29B17393670B9B54FA24 /* Pods-VKProjectMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKProjectMVVM.debug.xcconfig"; path = "Target Support Files/Pods-VKProjectMVVM/Pods-VKProjectMVVM.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +136,7 @@
 				630CF2702803286B00D52738 /* ProductsViewController.swift */,
 				630CF272280328C800D52738 /* ProductDetailViewController.swift */,
 				630CF2762803291900D52738 /* ReviewViewController.swift */,
+				63CC2FDD281643200003975A /* LoginViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -160,6 +165,7 @@
 			children = (
 				630CF28C28032B2A00D52738 /* ReviewService.swift */,
 				630CF28E28032B4E00D52738 /* ProductService.swift */,
+				630EDD152818D47A0034AEEC /* GenericResponse.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -288,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63CC2FDE281643200003975A /* LoginViewController.swift in Sources */,
 				630CF261280324EB00D52738 /* VKProjectMVVM.xcdatamodeld in Sources */,
 				630CF28F28032B4E00D52738 /* ProductService.swift in Sources */,
 				630CF25B280324EB00D52738 /* BaseViewController.swift in Sources */,
@@ -299,6 +306,7 @@
 				630CF28D28032B2A00D52738 /* ReviewService.swift in Sources */,
 				630CF27C280329D500D52738 /* ProductsTableViewCell.swift in Sources */,
 				630CF28028032A2300D52738 /* ReviewTableViewCell.swift in Sources */,
+				630EDD162818D47A0034AEEC /* GenericResponse.swift in Sources */,
 				630CF28B28032AFD00D52738 /* Review.swift in Sources */,
 				630CF2712803286B00D52738 /* ProductsViewController.swift in Sources */,
 				630CF28528032A9A00D52738 /* ReviewViewModel.swift in Sources */,
