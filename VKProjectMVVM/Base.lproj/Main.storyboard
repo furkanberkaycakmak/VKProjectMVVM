@@ -214,21 +214,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TEST" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25f-uB-0dF">
-                                <rect key="frame" x="145" y="327" width="41" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t8A-YB-vHK">
+                                <rect key="frame" x="70" y="170" width="274" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ps6-AN-MEN">
+                                <rect key="frame" x="70" y="249" width="274" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Image URL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uCs-Z6-x0I">
+                                <rect key="frame" x="70" y="328" width="274" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pnI-bf-bDW">
+                                <rect key="frame" x="152" y="495" width="110" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="NGG-UL-Phe"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Add Product"/>
+                                <connections>
+                                    <action selector="addProductButtonClicked:" destination="b9Q-Zv-o69" eventType="touchUpInside" id="GPU-R7-kfS"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Uko-VQ-npt"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ps6-AN-MEN" firstAttribute="leading" secondItem="uCs-Z6-x0I" secondAttribute="leading" id="3FC-Yq-eWV"/>
+                            <constraint firstItem="Ps6-AN-MEN" firstAttribute="top" secondItem="t8A-YB-vHK" secondAttribute="bottom" constant="45" id="CuK-lO-nCa"/>
+                            <constraint firstItem="t8A-YB-vHK" firstAttribute="trailing" secondItem="Ps6-AN-MEN" secondAttribute="trailing" id="G4c-Fs-p2P"/>
+                            <constraint firstItem="t8A-YB-vHK" firstAttribute="leading" secondItem="Uko-VQ-npt" secondAttribute="leading" constant="70" id="MGW-6E-C5q"/>
+                            <constraint firstItem="uCs-Z6-x0I" firstAttribute="centerX" secondItem="pnI-bf-bDW" secondAttribute="centerX" id="eOp-kv-f4d"/>
+                            <constraint firstItem="pnI-bf-bDW" firstAttribute="leading" secondItem="Uko-VQ-npt" secondAttribute="leading" constant="152" id="jgs-Zv-pWA"/>
+                            <constraint firstItem="Ps6-AN-MEN" firstAttribute="trailing" secondItem="uCs-Z6-x0I" secondAttribute="trailing" id="mPU-Kt-4iL"/>
+                            <constraint firstItem="t8A-YB-vHK" firstAttribute="leading" secondItem="Ps6-AN-MEN" secondAttribute="leading" id="oNn-4n-NHk"/>
+                            <constraint firstItem="t8A-YB-vHK" firstAttribute="centerX" secondItem="dTe-tm-IuH" secondAttribute="centerX" id="tjj-AH-SjM"/>
+                            <constraint firstItem="Uko-VQ-npt" firstAttribute="bottom" secondItem="pnI-bf-bDW" secondAttribute="bottom" constant="319" id="y4v-Fo-0JW"/>
+                            <constraint firstItem="uCs-Z6-x0I" firstAttribute="top" secondItem="Ps6-AN-MEN" secondAttribute="bottom" constant="45" id="yyQ-8a-wj4"/>
+                            <constraint firstItem="t8A-YB-vHK" firstAttribute="top" secondItem="Uko-VQ-npt" secondAttribute="top" constant="126" id="zMT-V1-1Ad"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descriptionTextField" destination="Ps6-AN-MEN" id="K2o-6s-gcv"/>
+                        <outlet property="imageUrlTextField" destination="uCs-Z6-x0I" id="2s8-dL-xdc"/>
+                        <outlet property="nameTextField" destination="t8A-YB-vHK" id="O3V-yp-qKd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chj-3X-IcG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="617" y="-71"/>
+            <point key="canvasLocation" x="614.49275362318849" y="-71.651785714285708"/>
         </scene>
         <!--Product Detail View Controller-->
         <scene sceneID="mPV-2A-2kl">
