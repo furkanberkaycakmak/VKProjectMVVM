@@ -48,10 +48,12 @@ class ProductsViewController: BaseViewController {
         floaty.plusColor = UIColor.white
         floaty.layer.cornerRadius = 25
         floaty.applyNeuStyle()
+        guard let sb = storyboard else {
+            return
+        }
+        let vc = sb.instantiateViewController(withIdentifier: "AddProductViewController") as! AddProductViewController
         floaty.addItem("Add Product", icon: UIImage(named: "add"), handler: { item in
-            let alert = UIAlertController(title: "Add Product", message: "Service is preparing..", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Okey then", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
             floaty.close()
         })
         
@@ -154,7 +156,7 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let deleteAction = UIContextualAction(style: .destructive, title: ""){(contextualAction,view,bool) in
-            let product: Product
+            var product: Product
             if self.isFiltering {
                 product = self.filteredProducts[indexPath.row]
             } else {
