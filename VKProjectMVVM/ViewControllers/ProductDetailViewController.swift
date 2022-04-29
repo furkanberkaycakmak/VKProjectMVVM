@@ -49,6 +49,8 @@ class ProductDetailViewController: BaseViewController {
         
     }
     
+    //MARK: - Function when Add Review button clicked.
+    
     @IBAction func addReviewTapped(_ sender: UIButton) {
         guard let sb = storyboard else {
             return
@@ -60,6 +62,8 @@ class ProductDetailViewController: BaseViewController {
         present(vc, animated: true)
     }
 }
+
+//MARK: - Delegate function for reviews
 
 extension ProductDetailViewController: ReviewDelegate{
     func reviewSent(review: Review) {

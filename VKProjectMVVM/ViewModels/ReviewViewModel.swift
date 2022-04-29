@@ -7,6 +7,7 @@
 
 import Foundation
 
+//MARK: - ViewModel class and initializers
 
 class ReviewViewModel {
     var reviews : [Review] = []

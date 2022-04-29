@@ -7,6 +7,8 @@
 
 import Foundation
 
+//MARK: - ViewModel class and initializers
+
 class ProductViewModel {
     var products : [Product] = []
     var service : ProductServiceProtocol

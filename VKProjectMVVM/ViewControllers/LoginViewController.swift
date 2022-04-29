@@ -17,8 +17,13 @@ class LoginViewController: BaseViewController {
     
     @IBOutlet weak var passwordText: UITextField!
     
+    @IBOutlet weak var softLoginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
+        
+        //MARK: - Configuration for storyboard like instagram using "pastel"
         
         let pastelView = PastelView(frame: view.bounds)
         pastelView.startPastelPoint = .bottomLeft
@@ -36,8 +41,22 @@ class LoginViewController: BaseViewController {
         view.insertSubview(pastelView, at: 0)
     }
     
+    //MARK: - Function for login button action with segue
+    
     @IBAction func loginButtonClicked(_ sender: Any) {
         self.performSegue(withIdentifier: "toProducts", sender: nil)
         }
+    
+    
+    private func setupViews() {
+        
+        let textColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 0.9)
+        let textAttributes: [NSAttributedString.Key:Any] = [
+            .foregroundColor: textColor,
+            .kern: 0.65,
+            .font: UIFont.systemFont(ofSize: 14, weight: .semibold)
+        ]
+        softLoginButton.applyNeuBtnStyle(type: .elevatedSoftRound, attributedTitle: NSAttributedString(string: "Login", attributes: textAttributes))
+    }
 
 }

@@ -19,6 +19,7 @@ struct Product: Codable {
     var currency: String?
     var ok : String?
     
+    //MARK: - Function that gets overall rating for product
     
     func getOverallRating() -> String {
         guard let reviews = self.reviews,

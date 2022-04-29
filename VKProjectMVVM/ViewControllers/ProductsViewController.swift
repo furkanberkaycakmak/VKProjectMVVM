@@ -43,6 +43,8 @@ class ProductsViewController: BaseViewController {
         navigationItem.searchController = searchController
         definesPresentationContext = true
         
+        //MARK: - Floating button configuration with "synth" and "floaty"
+        
         let floaty = Floaty()
         floaty.buttonColor = NeuUtils.baseColor
         floaty.plusColor = UIColor.white
@@ -63,6 +65,8 @@ class ProductsViewController: BaseViewController {
     @objc func refresh(_ sender: AnyObject) {
         getProducts()
     }
+    
+    //MARK: - Function that calls products
     
     func getProducts() {
         
@@ -91,7 +95,9 @@ class ProductsViewController: BaseViewController {
             }
         }
     }
-   
+    
+    //MARK: - Function that switches to another VC when selected
+    
     func select(product: Product) {
         
         guard let sb = storyboard else {
@@ -153,6 +159,8 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
        select(product: product)
     }
     
+    //MARK: - Swipe action configuration for delete rows
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let deleteAction = UIContextualAction(style: .destructive, title: ""){(contextualAction,view,bool) in
@@ -198,9 +206,6 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
         
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
-    
-    
-    
     
 }
 

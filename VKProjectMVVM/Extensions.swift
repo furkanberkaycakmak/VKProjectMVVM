@@ -7,6 +7,8 @@
 
 import Foundation
 
+//MARK: - Extension for Encodable
+
 extension Encodable {
     var asJson: Data? {
         let jsonEncoder = JSONEncoder()

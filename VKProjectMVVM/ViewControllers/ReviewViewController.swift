@@ -31,6 +31,7 @@ class ReviewViewController: BaseViewController, UITextViewDelegate {
         setUpUI()
     }
     
+    //MARK: - Function for configurating UI
     
     func setUpUI() {
         reviewAlertView.layer.cornerRadius = 10.0
@@ -40,7 +41,8 @@ class ReviewViewController: BaseViewController, UITextViewDelegate {
         ratingView.rating = 2
     }
 
-
+    //MARK: - Function for adding reviews on service
+    
     @IBAction func doneButtonTapped(_ sender: Any) {
         
         guard let reviewText = reviewTextView.text,
@@ -70,6 +72,8 @@ class ReviewViewController: BaseViewController, UITextViewDelegate {
             }
         }
     }
+    
+    //MARK: - Function for dissmissing operation
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
         

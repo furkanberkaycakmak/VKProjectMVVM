@@ -7,6 +7,8 @@
 
 import Foundation
 
+//MARK: -API error handler and switcher
+
 enum APIError: Error {
     case internalError
     case serverError(String)
@@ -25,6 +27,8 @@ extension APIError: LocalizedError {
         }
     }
 }
+
+//MARK: -Protocols for product service
 
 protocol ProductServiceProtocol {
     func getProducts(completion: @escaping((Result<[Product],APIError>) -> Void))
@@ -81,6 +85,8 @@ class ProductService : ProductServiceProtocol {
         case DEL
     }
     
+    //MARK: - Function that calls every product on database
+    
     func getProducts(completion: @escaping ((Result<[Product], APIError>) -> Void)) {
         let endpoint :EndPoint = .productList
         let path = "\(baseURL)\(endpoint.rawValue)"
@@ -112,8 +118,5 @@ class ProductService : ProductServiceProtocol {
         
         dataTask?.resume()
     }
-    
-
-
     
 }

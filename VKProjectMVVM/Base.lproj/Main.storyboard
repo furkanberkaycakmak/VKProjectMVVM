@@ -87,6 +87,7 @@
                     <connections>
                         <outlet property="logoView" destination="UCt-F6-bt7" id="6ED-EO-AZL"/>
                         <outlet property="passwordText" destination="4ln-Ut-fnA" id="90Q-Fk-bfH"/>
+                        <outlet property="softLoginButton" destination="Huq-a7-tuV" id="o1t-cR-GjX"/>
                         <outlet property="usernameText" destination="fSD-rm-Ez8" id="foL-I4-wnf"/>
                         <segue destination="D67-lc-RFe" kind="presentation" identifier="toProducts" modalPresentationStyle="fullScreen" id="LnC-fi-NRH"/>
                     </connections>
@@ -210,7 +211,7 @@
         <scene sceneID="9Fv-WF-Okt">
             <objects>
                 <viewController storyboardIdentifier="AddProductViewController" id="b9Q-Zv-o69" customClass="AddProductViewController" customModule="VKProjectMVVM" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dTe-tm-IuH">
+                    <view key="view" contentMode="scaleToFill" id="dTe-tm-IuH" customClass="UIScrollView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -259,9 +260,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="contentScrollView" destination="dTe-tm-IuH" id="6d4-FT-EPV"/>
                         <outlet property="descriptionTextField" destination="Ps6-AN-MEN" id="K2o-6s-gcv"/>
                         <outlet property="imageUrlTextField" destination="uCs-Z6-x0I" id="2s8-dL-xdc"/>
                         <outlet property="nameTextField" destination="t8A-YB-vHK" id="O3V-yp-qKd"/>
+                        <outlet property="softButton" destination="pnI-bf-bDW" id="6Ax-6d-iPz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="chj-3X-IcG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

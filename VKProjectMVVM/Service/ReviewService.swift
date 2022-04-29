@@ -7,6 +7,8 @@
 
 import Foundation
 
+//MARK: - Protocols for review service
+
 protocol ReviewServiceProtocol {
     func submitReview(review: Review,completion: @escaping ((Result<Review, APIError>) -> Void))
     func getReviews(productId:String, completion: @escaping ((Result<[Review],APIError>) -> Void))
@@ -25,6 +27,8 @@ class ReviewService : ReviewServiceProtocol {
         case GET
         case POST
     }
+    
+    //MARK: - Function that getting reviews for a productId
     
     func getReviews(productId:String, completion: @escaping ((Result<[Review],APIError>) -> Void)) {
         let endpoint :EndPoint = .productList
@@ -61,6 +65,7 @@ class ReviewService : ReviewServiceProtocol {
         dataTask?.resume()
     }
     
+    //MARK: - Function that submits a new review on a product
     
     func submitReview(review: Review,completion: @escaping ((Result<Review, APIError>) -> Void)) {
         let endpoint :EndPoint = .productList
