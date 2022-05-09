@@ -22,6 +22,7 @@ class ProductDetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupViews()
         
         service = ReviewService()
         if let id = product.id {
@@ -112,6 +113,18 @@ extension ProductDetailViewController: UITableViewDelegate, UITableViewDataSourc
             cell.configure(review: viewModel.reviews[indexPath.row])
             return cell
         }
+    }
+    
+    private func setupViews() {
+        
+        NeuUtils.baseColor = UIColor.white
+        let textColor = UIColor(red: 20/255.0, green: 10/255.0, blue: 20/255.0, alpha: 0.9)
+        let textAttributes: [NSAttributedString.Key:Any] = [
+            .foregroundColor: textColor,
+            .kern: 0.65,
+            .font: UIFont.systemFont(ofSize: 14, weight: .semibold)
+        ]
+        addReview.applyNeuBtnStyle(type: .elevatedSoftRound, attributedTitle: NSAttributedString(string: "Add Review", attributes: textAttributes))
     }
     
 }

@@ -38,7 +38,7 @@ class ReviewViewController: BaseViewController, UITextViewDelegate {
         reviewAlertView.layer.borderColor = UIColor.lightGray.cgColor
         reviewAlertView.layer.borderWidth = 1.0
         reviewTextView.delegate = self
-        ratingView.rating = 2
+        ratingView.rating = 3
     }
 
     //MARK: - Function for adding reviews on service

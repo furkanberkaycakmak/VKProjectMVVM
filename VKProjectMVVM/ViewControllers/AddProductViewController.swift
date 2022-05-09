@@ -26,7 +26,7 @@ class AddProductViewController: UIViewController {
         view.backgroundColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 0.95)
         contentScrollView.delaysContentTouches = false
         
-        let textColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 0.9)
+        let textColor = UIColor(red: 20/255.0, green: 10/255.0, blue: 20/255.0, alpha: 0.9)
         let textAttributes: [NSAttributedString.Key:Any] = [
             .foregroundColor: textColor,
             .kern: 0.65,
