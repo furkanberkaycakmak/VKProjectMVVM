@@ -18,8 +18,8 @@ class ReviewViewController: BaseViewController, UITextViewDelegate {
     @IBOutlet weak var ratingView: CosmosView!
     @IBOutlet weak var reviewTextView: UITextView!
     @IBOutlet weak var reviewAlertView: UIView!
-    var delegate : ReviewDelegate!
     
+    var delegate : ReviewDelegate!
     var service: ReviewServiceProtocol!
     var productId: String?
     var viewModel : ReviewViewModel!

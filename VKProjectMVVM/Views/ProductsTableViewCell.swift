@@ -10,6 +10,7 @@ import Kingfisher
 import Synth
 
 class ProductsTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var productDescription: UILabel!
@@ -21,7 +22,6 @@ class ProductsTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-    
     func configure(product: Product) {
         
         productImage.kf.setImage(with: URL(string: product.imgUrl ?? ""))

@@ -50,6 +50,7 @@ class LoginViewController: BaseViewController {
     
     private func setupViews() {
         
+        NeuUtils.baseColor = UIColor.white
         let textColor = UIColor(red: 255/255.0, green: 255/255.0, blue: 255/255.0, alpha: 0.9)
         let textAttributes: [NSAttributedString.Key:Any] = [
             .foregroundColor: textColor,

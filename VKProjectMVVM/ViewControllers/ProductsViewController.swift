@@ -47,7 +47,7 @@ class ProductsViewController: BaseViewController {
         
         let floaty = Floaty()
         floaty.buttonColor = NeuUtils.baseColor
-        floaty.plusColor = UIColor.white
+        floaty.plusColor = UIColor.black
         floaty.layer.cornerRadius = 25
         floaty.applyNeuStyle()
         guard let sb = storyboard else {
