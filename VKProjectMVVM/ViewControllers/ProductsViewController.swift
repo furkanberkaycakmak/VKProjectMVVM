@@ -9,21 +9,22 @@ import Floaty
 import Synth
 
 class ProductsViewController: BaseViewController {
-
+    
     @IBOutlet weak var productsTableView: UITableView!
     let searchController = UISearchController(searchResultsController: nil)
     var refreshControl = UIRefreshControl()
     var filteredProducts: [Product] = []
     var isSearchBarEmpty: Bool {
-      return searchController.searchBar.text?.isEmpty ?? true
+        return searchController.searchBar.text?.isEmpty ?? true
     }
     
     var isFiltering: Bool {
-      return searchController.isActive && !isSearchBarEmpty
+        return searchController.isActive && !isSearchBarEmpty
     }
     
     var viewModel : ProductViewModel!
     var service : ProductServiceProtocol!
+    var isAfterSuccessProduct = false
     
     
     override func viewDidLoad() {
@@ -55,6 +56,7 @@ class ProductsViewController: BaseViewController {
         }
         let vc = sb.instantiateViewController(withIdentifier: "AddProductViewController") as! AddProductViewController
         floaty.addItem("Add Product", icon: UIImage(named: "add"), handler: { item in
+            vc.addProductDelegate = self
             self.navigationController?.pushViewController(vc, animated: true)
             floaty.close()
         })
@@ -78,6 +80,16 @@ class ProductsViewController: BaseViewController {
                 strongSelf.refreshControl.endRefreshing()
                 if done{
                     strongSelf.productsTableView.reloadData()
+                    if self?.isAfterSuccessProduct == true {
+                        if strongSelf.viewModel.products.count > 0 {
+                            if let count = self?.viewModel.products.count{
+                                let indexPath = IndexPath(row: count - 1,section: 0)
+                                self?.productsTableView.scrollToRow(at: indexPath, at: .top, animated: true)
+                            }
+                            
+                        }
+                    }
+                    
                     if strongSelf.viewModel.products.isEmpty {
                         strongSelf.productsTableView.tableFooterView = strongSelf.createErrorView(msg: "No Products have been listed yet.")
                     }
@@ -112,10 +124,10 @@ class ProductsViewController: BaseViewController {
     func filterContentForSearchText(_ searchText: String) {
         filteredProducts = viewModel.products.filter { (product: Product) -> Bool in
             return (product.name?.lowercased().contains(searchText.lowercased()) ?? false || product.description?.lowercased().contains(searchText.lowercased()) ?? false)
-      }
-      productsTableView.reloadData()
+        }
+        productsTableView.reloadData()
     }
-
+    
 }
 
 extension ProductsViewController: UISearchResultsUpdating {
@@ -129,8 +141,8 @@ extension ProductsViewController: UISearchResultsUpdating {
 extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering {
-           return filteredProducts.count
-         }
+            return filteredProducts.count
+        }
         return viewModel.products.count
     }
     
@@ -139,9 +151,9 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
         let product : Product
         if isFiltering {
             product = filteredProducts[indexPath.row]
-          } else {
+        } else {
             product = viewModel.products[indexPath.row]
-          }
+        }
         
         cell.configure(product: product)
         return cell
@@ -155,8 +167,8 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             product = viewModel.products[indexPath.row]
         }
-
-       select(product: product)
+        
+        select(product: product)
     }
     
     //MARK: - Swipe action configuration for delete rows
@@ -177,24 +189,14 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
             alert.addAction(cancelAction)
             
             let yesAction = UIAlertAction(title: "Yes", style: .destructive){ action in
-    /*            func deleteProduct(at row: Int) {
-
-
-                    let filteredProducts = self.filteredProducts[row]
-
-                    self.productService.deleteProduct(with: filteredProducts.id) { [weak self] result in
-                        switch result {
-                        case .success:
-                            self?.presentables.removeAll(where: {
-                                $0 == filteredPresentable
-                            })
-                            self?.onEvent?(.productDeleted(row: row))
-                            self?.state.switchToLoaded()
-                        case .failure(let error):
-                            self?.handleError(error)
-                        }
+                ProductService().deleteProduct(id: product.id!){ response in
+                    DispatchQueue.main.async {
+                        self.productsTableView.reloadData()
                     }
-                } */
+                    
+                    
+                    
+                }
                 
             }
             alert.addAction(yesAction)
@@ -209,5 +211,11 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+extension ProductsViewController : AddProductDelegate {
+    func reloadProductServiceAfterSuccess() {
+        self.isAfterSuccessProduct = true
+        self.getProducts()
+    }
+}
 
 

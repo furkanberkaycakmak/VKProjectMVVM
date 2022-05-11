@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Moya
 
 //MARK: -API error handler and switcher
 
@@ -32,45 +33,45 @@ extension APIError: LocalizedError {
 
 protocol ProductServiceProtocol {
     func getProducts(completion: @escaping((Result<[Product],APIError>) -> Void))
-    //func deleteProduct(id: String, completion: @escaping((Result<GenericResponse>) -> Void))
 }
 
 
 class ProductService : ProductServiceProtocol {
-    func deleteProduct(id: String, completion: @escaping ((Result<Product, APIError>) -> Void)) {
-            let endpoint :EndPoint = .productList
-            let path = "\(baseURL)\(endpoint.rawValue)/\(id)"
-            let method = Method.DEL
-            guard let url = URL(string: path) else {
-                completion(.failure(.internalError))
-                return
-            }
-            print(url.absoluteURL)
-            
-            var request = URLRequest(url: url)
-            request.httpMethod = method.rawValue
-            
-            dataTask = defaultSession.dataTask(with: request) { [weak self] data, response, error in
-                defer {
-                    self?.dataTask = nil
-                }
-                
-                if let error = error {
-                    completion(.failure(.serverError(error.localizedDescription)))
-                } else if let data = data {
-
-                    let decoder = JSONDecoder()
-                    do {
-                        let product = try decoder.decode(Product.self, from: data)
-                        completion(.success(product))
-                    } catch {
-                        completion(.failure(.parsingError))
-                    }
-                }
-            }
-            
-            dataTask?.resume()
+    
+    func deleteProduct(id:String, completion: @escaping ((Result<DeleteProductResponse,APIError>) -> Void)) {
+        let endpoint :EndPoint = .productList
+        let path = "\(baseURL)\(endpoint.rawValue)/\(id)"
+        let method = Method.DELETE
+        guard let url = URL(string: path) else {
+            completion(.failure(.internalError))
+            return
         }
+        print(url.absoluteURL)
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = method.rawValue
+        
+        dataTask = defaultSession.dataTask(with: request) { [weak self] data, response, error in
+            defer {
+                self?.dataTask = nil
+            }
+            
+            if let error = error {
+                completion(.failure(.serverError(error.localizedDescription)))
+            } else if let data = data {
+
+                let decoder = JSONDecoder()
+                do {
+                    let deleted = try decoder.decode(DeleteProductResponse.self, from: data)
+                    completion(.success(deleted))
+                } catch {
+                    completion(.failure(.parsingError))
+                }
+            }
+        }
+        
+        dataTask?.resume()
+    }
     
     
     private let baseURL = "http://localhost:3001"
@@ -82,7 +83,7 @@ class ProductService : ProductServiceProtocol {
     
     private enum Method: String {
         case GET
-        case DEL
+        case DELETE
     }
     
     //MARK: - Function that calls every product on database
@@ -109,6 +110,50 @@ class ProductService : ProductServiceProtocol {
                 
                 do {
                     let products = try decoder.decode([Product].self, from: data)
+                    completion(.success(products))
+                } catch {
+                    completion(.failure(.parsingError))
+                }
+            }
+        }
+        
+        dataTask?.resume()
+    }
+    
+    func addProduct(model: AddProductRequest ,completion: @escaping ((Result<[AddProductResponse], APIError>) -> Void)) {
+        let endpoint :EndPoint = .productList
+        let path = "\(baseURL)\(endpoint.rawValue)"
+        guard let url = URL(string: path) else {
+            completion(.failure(.internalError))
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let jsonBody = try JSONEncoder().encode(model)
+            request.httpBody = jsonBody
+            print("jsonBody:",jsonBody)
+            let jsonBodyString = String(data: jsonBody, encoding: .utf8)
+            print("JSON String : ", jsonBodyString!)
+        } catch let err  {
+            print("jsonBody Error: ",err)
+        }
+        dataTask = defaultSession.dataTask(with: request) { [weak self] data, response, error in
+            defer {
+                self?.dataTask = nil
+            }
+            
+            if let error = error {
+                print(error.localizedDescription)
+                completion(.failure(.serverError(error.localizedDescription)))
+            } else if let data = data {
+                
+                let decoder = JSONDecoder()
+                
+                do {
+                    let products = try decoder.decode([AddProductResponse].self, from: data)
                     completion(.success(products))
                 } catch {
                     completion(.failure(.parsingError))

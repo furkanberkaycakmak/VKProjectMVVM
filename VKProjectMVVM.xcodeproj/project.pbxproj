@@ -28,7 +28,10 @@
 		630CF28F28032B4E00D52738 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630CF28E28032B4E00D52738 /* ProductService.swift */; };
 		630EDD162818D47A0034AEEC /* GenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EDD152818D47A0034AEEC /* GenericResponse.swift */; };
 		630EDD36281A79780034AEEC /* AddProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630EDD35281A79780034AEEC /* AddProductViewController.swift */; };
+		63122086282B371D002DEE20 /* DeleteProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63122085282B371D002DEE20 /* DeleteProductModel.swift */; };
 		6366AAB82808ADBB008E3728 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6366AAB72808ADBB008E3728 /* Extensions.swift */; };
+		6380D1F3282B224E00DAA9BD /* AddProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380D1F2282B224E00DAA9BD /* AddProductModel.swift */; };
+		6380D1F6282B284D00DAA9BD /* AddProductProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6380D1F5282B284D00DAA9BD /* AddProductProtocol.swift */; };
 		63CC2FDE281643200003975A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CC2FDD281643200003975A /* LoginViewController.swift */; };
 		6DDEA06B4D322898C0B6620D /* Pods_VKProjectMVVM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C5635413770328FC2606930 /* Pods_VKProjectMVVM.framework */; };
 /* End PBXBuildFile section */
@@ -58,7 +61,10 @@
 		630CF28E28032B4E00D52738 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		630EDD152818D47A0034AEEC /* GenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericResponse.swift; sourceTree = "<group>"; };
 		630EDD35281A79780034AEEC /* AddProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductViewController.swift; sourceTree = "<group>"; };
+		63122085282B371D002DEE20 /* DeleteProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteProductModel.swift; sourceTree = "<group>"; };
 		6366AAB72808ADBB008E3728 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		6380D1F2282B224E00DAA9BD /* AddProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductModel.swift; sourceTree = "<group>"; };
+		6380D1F5282B284D00DAA9BD /* AddProductProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductProtocol.swift; sourceTree = "<group>"; };
 		63CC2FDD281643200003975A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9C5635413770328FC2606930 /* Pods_VKProjectMVVM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VKProjectMVVM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E35D29B17393670B9B54FA24 /* Pods-VKProjectMVVM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VKProjectMVVM.debug.xcconfig"; path = "Target Support Files/Pods-VKProjectMVVM/Pods-VKProjectMVVM.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,6 +120,7 @@
 		630CF255280324EB00D52738 /* VKProjectMVVM */ = {
 			isa = PBXGroup;
 			children = (
+				6380D1F4282B281F00DAA9BD /* Protocol */,
 				630CF28728032AD500D52738 /* Models */,
 				630CF28628032AC700D52738 /* Service */,
 				630CF28128032A6D00D52738 /* ViewModels */,
@@ -178,8 +185,18 @@
 			children = (
 				630CF28828032AE800D52738 /* Product.swift */,
 				630CF28A28032AFD00D52738 /* Review.swift */,
+				6380D1F2282B224E00DAA9BD /* AddProductModel.swift */,
+				63122085282B371D002DEE20 /* DeleteProductModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		6380D1F4282B281F00DAA9BD /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				6380D1F5282B284D00DAA9BD /* AddProductProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -297,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63122086282B371D002DEE20 /* DeleteProductModel.swift in Sources */,
 				63CC2FDE281643200003975A /* LoginViewController.swift in Sources */,
 				630CF261280324EB00D52738 /* VKProjectMVVM.xcdatamodeld in Sources */,
 				630EDD36281A79780034AEEC /* AddProductViewController.swift in Sources */,
@@ -308,6 +326,8 @@
 				630CF27E28032A0D00D52738 /* ProductDetailTableViewCell.swift in Sources */,
 				630CF28328032A8700D52738 /* ProductViewModel.swift in Sources */,
 				630CF28D28032B2A00D52738 /* ReviewService.swift in Sources */,
+				6380D1F6282B284D00DAA9BD /* AddProductProtocol.swift in Sources */,
+				6380D1F3282B224E00DAA9BD /* AddProductModel.swift in Sources */,
 				630CF27C280329D500D52738 /* ProductsTableViewCell.swift in Sources */,
 				630CF28028032A2300D52738 /* ReviewTableViewCell.swift in Sources */,
 				630EDD162818D47A0034AEEC /* GenericResponse.swift in Sources */,

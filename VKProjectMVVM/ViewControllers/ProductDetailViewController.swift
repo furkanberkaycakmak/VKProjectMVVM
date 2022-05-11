@@ -15,7 +15,6 @@ class ProductDetailViewController: BaseViewController {
     @IBOutlet weak var addReview: UIButton!
     
     
-    
     var product = Product()
     var service : ReviewService!
     var viewModel : ReviewViewModel!

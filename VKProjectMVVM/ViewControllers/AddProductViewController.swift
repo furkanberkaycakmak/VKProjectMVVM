@@ -15,11 +15,12 @@ class AddProductViewController: UIViewController {
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var imageUrlTextField: UITextField!
     @IBOutlet weak var softButton: UIButton!
+    var addProductDelegate : AddProductDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-
+        
     }
     
     private func setupViews() {
@@ -36,5 +37,17 @@ class AddProductViewController: UIViewController {
     }
     
     @IBAction func addProductButtonClicked(_ sender: Any) {
+        
+        let addProductObject = AddProductRequest(id: "BERKAY", name: self.nameTextField.text, description: self.descriptionTextField.text, imgUrl: self.imageUrlTextField.text)
+        ProductService().addProduct(model: addProductObject) {response in
+            
+            print("succ")
+            DispatchQueue.main.async {
+                self.navigationController?.popViewController(animated: false)
+            }
+            self.addProductDelegate?.reloadProductServiceAfterSuccess()
+
+        }
+        
     }
 }
