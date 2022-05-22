@@ -13,5 +13,3 @@ struct Review: Codable {
     var locale: String?
     var productId: String
 }
-
-

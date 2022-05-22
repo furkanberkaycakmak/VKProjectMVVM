@@ -33,6 +33,8 @@ extension APIError: LocalizedError {
 
 protocol ProductServiceProtocol {
     func getProducts(completion: @escaping((Result<[Product],APIError>) -> Void))
+    func deleteProduct(id:String, completion: @escaping ((Result<DeleteProductResponse,APIError>) -> Void))
+    func addProduct(model: AddProductRequest ,completion: @escaping ((Result<[AddProductResponse], APIError>) -> Void))
 }
 
 

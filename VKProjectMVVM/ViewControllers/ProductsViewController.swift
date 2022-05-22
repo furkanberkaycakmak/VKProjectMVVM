@@ -8,6 +8,10 @@ import UIKit
 import Floaty
 import Synth
 
+protocol AddProductDelegate {
+    func reloadProductServiceAfterSuccess()
+}
+
 class ProductsViewController: BaseViewController {
     
     @IBOutlet weak var productsTableView: UITableView!
@@ -33,35 +37,10 @@ class ProductsViewController: BaseViewController {
         title = "VK Products"
         service = ProductService()
         viewModel = ProductViewModel(service: service)
-        
         getProducts()
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
-        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
-        productsTableView.addSubview(refreshControl)
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Products"
-        navigationItem.searchController = searchController
-        definesPresentationContext = true
-        
-        //MARK: - Floating button configuration with "synth" and "floaty"
-        
-        let floaty = Floaty()
-        floaty.buttonColor = NeuUtils.baseColor
-        floaty.plusColor = UIColor.black
-        floaty.layer.cornerRadius = 25
-        floaty.applyNeuStyle()
-        guard let sb = storyboard else {
-            return
-        }
-        let vc = sb.instantiateViewController(withIdentifier: "AddProductViewController") as! AddProductViewController
-        floaty.addItem("Add Product", icon: UIImage(named: "add"), handler: { item in
-            vc.addProductDelegate = self
-            self.navigationController?.pushViewController(vc, animated: true)
-            floaty.close()
-        })
-        
-        self.view.addSubview(floaty)
+        refreshControlSetup()
+        searchControllerSetup()
+        floatySetup()
     }
     
     @objc func refresh(_ sender: AnyObject) {
@@ -194,8 +173,6 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
                         self.productsTableView.reloadData()
                     }
                     
-                    
-                    
                 }
                 
             }
@@ -209,6 +186,45 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
     
+    //MARK: - Floating button configuration with "synth" and "floaty"
+    
+    func floatySetup() {
+        let floaty = Floaty()
+        floaty.buttonColor = NeuUtils.baseColor
+        floaty.plusColor = UIColor.black
+        floaty.layer.cornerRadius = 25
+        floaty.applyNeuStyle()
+        guard let sb = storyboard else {
+            return
+        }
+        let vc = sb.instantiateViewController(withIdentifier: "AddProductViewController") as! AddProductViewController
+        floaty.addItem("Add Product", icon: UIImage(named: "add"), handler: { item in
+            vc.addProductDelegate = self
+            self.navigationController?.pushViewController(vc, animated: true)
+            floaty.close()
+        })
+        
+        self.view.addSubview(floaty)
+    }
+    
+    //MARK: - Search Controller Setup
+
+    func searchControllerSetup() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search Products"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
+    
+    //MARK: - Refresh Control Setup
+
+    func refreshControlSetup(){
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
+        productsTableView.addSubview(refreshControl)
+    }
+
 }
 
 extension ProductsViewController : AddProductDelegate {
@@ -217,5 +233,7 @@ extension ProductsViewController : AddProductDelegate {
         self.getProducts()
     }
 }
+
+
 
 

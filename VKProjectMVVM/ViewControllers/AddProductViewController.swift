@@ -45,9 +45,11 @@ class AddProductViewController: UIViewController {
             DispatchQueue.main.async {
                 self.navigationController?.popViewController(animated: false)
             }
-            self.addProductDelegate?.reloadProductServiceAfterSuccess()
-
+            
+            if self.addProductDelegate != nil {
+                self.addProductDelegate?.reloadProductServiceAfterSuccess()
+                
+            }
         }
-        
     }
 }

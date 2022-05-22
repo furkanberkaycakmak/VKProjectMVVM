@@ -7,7 +7,6 @@
 
 import UIKit
 import Kingfisher
-import Synth
 
 class ProductsTableViewCell: UITableViewCell {
     
@@ -17,18 +16,22 @@ class ProductsTableViewCell: UITableViewCell {
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productRating: UILabel!
     
+    lazy var viewModel: ProductsTableViewCellViewModel = {
+            return ProductsTableViewCellViewModel()
+        }()
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
     func configure(product: Product) {
         
         productImage.kf.setImage(with: URL(string: product.imgUrl ?? ""))
         productDescription.text = product.description
         productName.text = product.name
         productPrice.text = "\(product.currency ?? "") \(String(product.price ?? 0.0))"
-        productRating.text = product.getOverallRating()
+        productRating.text = viewModel.getOverallRating(reviews: product.reviews)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
