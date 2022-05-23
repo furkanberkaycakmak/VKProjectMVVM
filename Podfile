@@ -9,7 +9,6 @@ target 'VKProjectMVVM' do
 
 pod 'Kingfisher', '~> 7.0'
 pod 'Cosmos', '~> 23.0'
-pod 'Moya', '~> 15.0'
 pod 'Floaty', '~> 4.2.0'
 pod "Pastel"
 pod 'synth-ios'

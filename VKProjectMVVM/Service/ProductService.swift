@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Moya
 
 //MARK: -API error handler and switcher
 
@@ -62,7 +61,7 @@ class ProductService : ProductServiceProtocol {
             if let error = error {
                 completion(.failure(.serverError(error.localizedDescription)))
             } else if let data = data {
-
+                
                 let decoder = JSONDecoder()
                 do {
                     let deleted = try decoder.decode(DeleteProductResponse.self, from: data)
@@ -124,7 +123,7 @@ class ProductService : ProductServiceProtocol {
     }
     
     //MARK: - Function that adds a product on database
-
+    
     
     func addProduct(model: AddProductRequest ,completion: @escaping ((Result<[AddProductResponse], APIError>) -> Void)) {
         let endpoint :EndPoint = .productList

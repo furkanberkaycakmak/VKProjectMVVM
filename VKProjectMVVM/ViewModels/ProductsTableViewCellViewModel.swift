@@ -8,10 +8,11 @@
 import Foundation
 
 //MARK: - Function that gets overall rating for product
+
 class ProductsTableViewCellViewModel {
     func getOverallRating(reviews : [Review]?) -> String {
         guard let reviews = reviews,
-            reviews.count != 0 else
+              reviews.count != 0 else
         {
             return "0"
         }

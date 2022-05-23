@@ -29,7 +29,7 @@ class LoginViewController: BaseViewController {
     }
     
     //MARK: - Function for setting up the views with "Synth"
-
+    
     private func setupViews() {
         
         

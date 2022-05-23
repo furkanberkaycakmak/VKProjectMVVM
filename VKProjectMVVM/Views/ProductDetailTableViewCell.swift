@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 class ProductDetailTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var productDescription: UILabel!
@@ -19,10 +19,10 @@ class ProductDetailTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
     
     //MARK: - Function that configures product table cell using "KingFisher"

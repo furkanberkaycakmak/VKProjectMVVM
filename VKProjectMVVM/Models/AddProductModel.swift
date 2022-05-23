@@ -14,7 +14,6 @@ struct AddProductRequest: Codable {
     var imgUrl: String?
 }
 
-
 struct AddProductResponse: Decodable {
     var id: String?
     var name: String?

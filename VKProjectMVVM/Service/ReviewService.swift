@@ -51,7 +51,7 @@ class ReviewService : ReviewServiceProtocol {
             if let error = error {
                 completion(.failure(.serverError(error.localizedDescription)))
             } else if let data = data {
-
+                
                 let decoder = JSONDecoder()
                 do {
                     let review = try decoder.decode([Review].self, from: data)
@@ -90,9 +90,9 @@ class ReviewService : ReviewServiceProtocol {
                 completion(.failure(.serverError(error.localizedDescription)))
             } else if let data = data {
                 if let dataString = String(data: data, encoding: .utf8) {
-
+                    
                     print("Response data string:\n \(dataString)")
-
+                    
                 }
                 let decoder = JSONDecoder()
                 do {

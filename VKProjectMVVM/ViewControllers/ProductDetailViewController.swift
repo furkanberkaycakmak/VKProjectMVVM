@@ -9,7 +9,7 @@ import UIKit
 import Synth
 
 class ProductDetailViewController: BaseViewController {
-
+    
     @IBOutlet weak var productDetailTable: UITableView!
     
     @IBOutlet weak var addReview: UIButton!
@@ -114,7 +114,7 @@ extension ProductDetailViewController: UITableViewDelegate, UITableViewDataSourc
         }
     }
     //MARK: - Function for setting views on controller with "Synth"
-
+    
     private func setupViews() {
         
         NeuUtils.baseColor = UIColor.white

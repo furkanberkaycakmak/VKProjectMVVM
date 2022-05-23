@@ -208,7 +208,7 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     //MARK: - Search Controller Setup
-
+    
     func searchControllerSetup() {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
@@ -218,13 +218,13 @@ extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     //MARK: - Refresh Control Setup
-
+    
     func refreshControlSetup(){
         refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(self.refresh(_:)), for: .valueChanged)
         productsTableView.addSubview(refreshControl)
     }
-
+    
 }
 
 extension ProductsViewController : AddProductDelegate {

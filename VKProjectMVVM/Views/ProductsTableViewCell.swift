@@ -17,8 +17,8 @@ class ProductsTableViewCell: UITableViewCell {
     @IBOutlet weak var productRating: UILabel!
     
     lazy var viewModel: ProductsTableViewCellViewModel = {
-            return ProductsTableViewCellViewModel()
-        }()
+        return ProductsTableViewCellViewModel()
+    }()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,12 +33,12 @@ class ProductsTableViewCell: UITableViewCell {
         productPrice.text = "\(product.currency ?? "") \(String(product.price ?? 0.0))"
         productRating.text = viewModel.getOverallRating(reviews: product.reviews)
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
-
+    
 }
 
 

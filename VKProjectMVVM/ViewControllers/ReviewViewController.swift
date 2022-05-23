@@ -14,7 +14,7 @@ protocol ReviewDelegate {
 }
 
 class ReviewViewController: BaseViewController, UITextViewDelegate {
-
+    
     @IBOutlet weak var ratingView: CosmosView!
     @IBOutlet weak var reviewTextView: UITextView!
     @IBOutlet weak var reviewAlertView: UIView!
@@ -26,7 +26,7 @@ class ReviewViewController: BaseViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         setUpUI()
     }
@@ -40,7 +40,7 @@ class ReviewViewController: BaseViewController, UITextViewDelegate {
         reviewTextView.delegate = self
         ratingView.rating = 3
     }
-
+    
     //MARK: - Function for adding reviews on service
     
     @IBAction func doneButtonTapped(_ sender: Any) {
