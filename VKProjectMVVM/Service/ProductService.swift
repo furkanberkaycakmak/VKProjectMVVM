@@ -37,6 +37,7 @@ protocol ProductServiceProtocol {
     func addProduct(model: AddProductRequest ,completion: @escaping ((Result<[AddProductResponse], APIError>) -> Void))
 }
 
+//MARK: - ProductService class
 
 class ProductService : ProductServiceProtocol {
     
@@ -121,6 +122,9 @@ class ProductService : ProductServiceProtocol {
         
         dataTask?.resume()
     }
+    
+    //MARK: - Function that adds a product on database
+
     
     func addProduct(model: AddProductRequest ,completion: @escaping ((Result<[AddProductResponse], APIError>) -> Void)) {
         let endpoint :EndPoint = .productList

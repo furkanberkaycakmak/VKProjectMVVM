@@ -113,7 +113,8 @@ extension ProductDetailViewController: UITableViewDelegate, UITableViewDataSourc
             return cell
         }
     }
-    
+    //MARK: - Function for setting views on controller with "Synth"
+
     private func setupViews() {
         
         NeuUtils.baseColor = UIColor.white

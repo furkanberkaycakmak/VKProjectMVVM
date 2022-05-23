@@ -19,7 +19,7 @@ class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        
+        pastelViewSetup()
     }
     
     //MARK: - Function for login button action with segue
@@ -28,7 +28,7 @@ class LoginViewController: BaseViewController {
         self.performSegue(withIdentifier: "toProducts", sender: nil)
     }
     
-    //MARK: - Function for setting up the views
+    //MARK: - Function for setting up the views with "Synth"
 
     private func setupViews() {
         
@@ -41,8 +41,6 @@ class LoginViewController: BaseViewController {
             .font: UIFont.systemFont(ofSize: 14, weight: .semibold)
         ]
         softLoginButton.applyNeuBtnStyle(type: .elevatedSoftRound, attributedTitle: NSAttributedString(string: "Login", attributes: textAttributes))
-        
-        pastelViewSetup()
     }
     
     //MARK: - Configuration for storyboard like instagram using "pastel"
